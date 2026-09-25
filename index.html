@@ -131,6 +131,23 @@ a{color:inherit}
 .pstep i{width:36px;height:36px;border-radius:50%;background:var(--mustard);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--wine);font-size:14px;z-index:1}
 .pstep:not(:last-child):after{content:"";position:absolute;left:17px;top:48px;bottom:-12px;width:2px;background:var(--line)}
 .pstep b{display:block;font-size:15px}.pstep span{font-size:13px;color:var(--muted)}
+.rank{padding:6px 22px 4px}
+.rk{display:grid;grid-template-columns:minmax(0,1fr) 78px 74px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.rk b{display:block;font-size:14px;font-weight:600}.rk small{display:block;color:var(--muted);font-size:12px}
+.rk .g,.rk .i{text-align:right;font-variant-numeric:tabular-nums}
+.rk.head{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;padding-top:12px}
+.rk.me{background:#FFF3DC;margin:0 -22px;padding:12px 22px;border-left:4px solid #601603}.rk.me .g{color:#9A2B0E;font-weight:700}
+.gmock{padding:20px 22px}
+.gsearch{border:1px solid var(--line);border-radius:30px;padding:10px 16px;font-size:14px;background:#fff;box-shadow:0 2px 6px #0000000d}
+.gmap{position:relative;height:150px;margin:14px 0;border-radius:6px;background:linear-gradient(135deg,#E8EFE9 25%,#DDE7E0 25%,#DDE7E0 50%,#E8EFE9 50%,#E8EFE9 75%,#DDE7E0 75%);background-size:40px 40px;overflow:hidden}
+.gmap i{position:absolute;width:12px;height:12px;border-radius:50%;background:#9AA8A4}
+.gmap b{position:absolute;font-size:30px;transform:translate(-50%,-80%)}
+.gcard{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff}
+.gt{display:flex;gap:12px;align-items:center}.gt b{display:block;font-size:16px}.gt small{display:block;color:var(--muted);font-size:12px}.gt small.open{color:#1E7A4B}
+.gav{width:52px;height:52px;border-radius:8px;background:#FFBE47;display:grid;place-items:center;flex-shrink:0}
+.gbtn{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.gbtn span{border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:12px;color:#0B57D0;font-weight:600}
+.gnote{margin:12px 0 0;font-size:13px;color:var(--muted)}
+.phase .build+.build{margin-top:18px}
 /* nav */
 .pnav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0 34px;border-top:1px solid var(--line)}
 .back{display:flex;gap:10px;align-items:center;font-size:14px}
@@ -914,9 +931,9 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <div class="intro-l">
 <div class="kicker eyebrow">Sua próxima fase começa aqui</div>
 <h1>Toda peça merece uma nova chance.<em>O seu brechó também.</em></h1>
-<p class="lead">Cristina, vamos levar para o Instagram o aconchego que as clientes já sentem na loja — e trazer mais gente do bairro até a Rua Tremedal.</p>
+<p class="lead">Cristina, vamos colocar o Nova Chance onde as clientes procuram — no Google e no Instagram — e trazer mais gente do bairro até a Rua Tremedal.</p>
 <button class="cta" data-go="1">Explore a jornada <span aria-hidden="true">↗</span></button>
-<div class="meta-row"><b>01—05</b><span>Da essência do brechó à cliente voltando toda semana</span></div>
+<div class="meta-row"><b>01—05</b><span>Da pesquisa da região à cliente voltando toda semana</span></div>
 </div>
 <div class="intro-r">
 <div class="bar">MODA COM HISTÓRIA. CONSERTOS. ACONCHEGO.</div>
@@ -933,45 +950,70 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <!-- JOURNEY -->
 <section class="view journey" id="journey" hidden>
 <div class="tabs" role="tablist" aria-label="Fases da proposta">
-<button class="tab" role="tab" data-go="1"><small>01</small>Essência</button>
-<button class="tab" role="tab" data-go="2"><small>02</small>Presença</button>
-<button class="tab" role="tab" data-go="3"><small>03</small>Atendimento</button>
+<button class="tab" role="tab" data-go="1"><small>01</small>Diagnóstico</button>
+<button class="tab" role="tab" data-go="2"><small>02</small>Google</button>
+<button class="tab" role="tab" data-go="3"><small>03</small>Instagram</button>
 <button class="tab" role="tab" data-go="4"><small>04</small>Conteúdo</button>
-<button class="tab" role="tab" data-go="5"><small>05</small>Experiência</button>
+<button class="tab" role="tab" data-go="5"><small>05</small>Caminho</button>
 </div>
 
 <!-- 1 -->
 <article class="phase" data-phase="1" hidden>
 <div>
-<div class="ph-head eyebrow"><span>Fundação do brechó</span><span>01 / 05</span></div>
-<h2 tabindex="-1">Tudo começa com o que <em>já é de vocês.</em></h2>
-<p class="sub">Três anos de história, três irmãs e um ambiente que as clientes descrevem como aconchegante e de boas energias. É isso que vai guiar cada escolha.</p>
-<div class="steps3"><span class="eyebrow">Daqui para a frente</span><div class="cols">
-<div><b>HOJE</b>Um brechó querido por quem conhece, mas ainda pouco visto por quem passa no Instagram.</div>
-<div><b>PROCESSO</b>Escuta das irmãs e das clientes, como a Verinha, para definir o jeito Nova Chance de falar e vender.</div>
-<div><b>RESULTADO</b>Um posicionamento claro que qualquer uma das três sabe explicar em uma frase.</div>
-</div></div>
-<div class="build"><span class="eyebrow">O que construímos nesta fase</span><ul>
-<li>O posicionamento do brechó no bairro</li><li>A voz e o jeito Nova Chance de conversar</li><li>O retrato da cliente que queremos atrair</li></ul></div>
-<p class="gate">Avançamos quando vocês se reconhecerem nessa direção.</p>
+<div class="ph-head eyebrow"><span>Pesquisa da região</span><span>01 / 05</span></div>
+<h2 tabindex="-1">Quem procura brechó por perto <em>ainda não encontra vocês.</em></h2>
+<p class="sub">Pesquisamos o Google Maps e o Instagram ao redor da Rua Tremedal em 25/09/2026. O aconchego que as clientes elogiam ainda não aparece onde as pessoas procuram.</p>
+<div class="build"><span class="eyebrow">O que encontramos</span><ul>
+<li>No Google Maps, o Nova Chance não aparece. Buscando o endereço, o Google mostra só a rua.</li>
+<li>Buscando “Nova Chance Brechó”, aparecem outros brechós com nome parecido, e não o de vocês.</li>
+<li>No Instagram são 69 seguidores, posts de vez em quando e nenhum link direto para o WhatsApp.</li>
+<li>Bem perto, no próprio Carlos Prates, outros brechós já aparecem no mapa, com nota e avaliações.</li></ul></div>
+<p class="gate">A boa notícia: ninguém da vizinhança domina essa busca. O espaço ainda está aberto.</p>
 </div>
-<div class="card dark"><div class="card-top"><span>Caderno de essência</span><span>01</span></div>
-<div class="essence"><div class="sisters" aria-label="As três irmãs"><span>1</span><span>2</span><span>3</span></div>
-<p class="quote">Moda com história, feita por três irmãs.</p>
-<p class="name">Nova Chance</p><p class="tagline">CONSERTOS · CUSTOMIZAÇÃO · CONSIGNAÇÃO</p></div>
-<div class="card-foot">Ponto de partida para construirmos juntas</div></div>
+<div class="card light"><div class="card-top"><span>Brechós que aparecem na busca</span><span>01</span></div>
+<div class="rank"><div class="rk head"><div>Brechó</div><span class="g">Google</span><span class="i">Instagram</span></div><div class="rk me"><div><b>Nova Chance Brechó</b><small>R. Tremedal, 220A · Carlos Prates</small></div><span class="g">Não aparece</span><span class="i">69</span></div><div class="rk"><div><b>Brechó Estrela Escorpião</b><small>Pça. São Francisco das Chagas · Carlos Prates</small></div><span class="g">4,9 · 8</span><span class="i">≈ 560</span></div><div class="rk"><div><b>Fofukids moda circular (infantil)</b><small>R. Belmiro Braga</small></div><span class="g">4,9 · 259</span><span class="i">≈ 7 mil</span></div><div class="rk"><div><b>Brechó Vitrine Circular</b><small>R. Ituiutaba</small></div><span class="g">3,8 · 72</span><span class="i">≈ 67 mil</span></div><div class="rk"><div><b>O Traje Brechó</b><small>R. Padre Eustáquio</small></div><span class="g">4,7 · 14</span><span class="i">≈ 2,3 mil</span></div><div class="rk"><div><b>Brechó Chuchu Blz</b><small>Mercado Novo · Av. Olegário Maciel</small></div><span class="g">5,0 · 23</span><span class="i">≈ 2,6 mil</span></div><div class="rk"><div><b>Belle Époque Brechó</b><small>Mercado Novo · Av. Olegário Maciel</small></div><span class="g">5,0 · 33</span><span class="i">≈ 11 mil</span></div><div class="rk"><div><b>Consensual Brechó</b><small>R. Rio de Janeiro · Lourdes</small></div><span class="g">5,0 · 360</span><span class="i">≈ 14,7 mil</span></div><div class="rk"><div><b>Novo Outra Vez BH (infantil)</b><small>R. dos Timbiras · Barro Preto</small></div><span class="g">4,8 · 383</span><span class="i">≈ 74 mil</span></div></div>
+<p class="note-s">Google: nota · número de avaliações no Google Maps. Instagram: seguidores aproximados exibidos na busca do Google. Consulta em 25/09/2026.</p></div>
 </article>
 
 <!-- 2 -->
 <article class="phase" data-phase="2" hidden>
 <div>
-<div class="ph-head eyebrow"><span>Identidade e presença</span><span>02 / 05</span></div>
-<h2 tabindex="-1">O que já existe <em>ganha forma.</em></h2>
-<p class="sub">O logo da agulha e as cores quentes já contam a história de reforma e recomeço. Vamos organizar tudo isso para que o brechó seja reconhecido — e encontrado.</p>
+<div class="ph-head eyebrow"><span>Google Meu Negócio</span><span>02 / 05</span></div>
+<h2 tabindex="-1">O balcão que fica <em>aberto 24 horas.</em></h2>
+<p class="sub">Quando alguém busca “brechó perto de mim” ou “brechó Carlos Prates”, o Google mostra um mapa com as lojas. Quem não tem o Perfil da Empresa não entra nessa lista.</p>
+<div class="build"><span class="eyebrow">Por que isso importa</span><ul>
+<li>Aparece no mapa e na busca, com rota, horário e telefone</li>
+<li>As avaliações viram prova: os brechós mais fortes da região passam de 300</li>
+<li>Fotos da loja mostram o aconchego antes da primeira visita</li>
+<li>É gratuito e fala com a cliente que prefere o Google ao Instagram</li></ul></div>
+<div class="build"><span class="eyebrow">O que fazemos nesta fase</span><ul>
+<li>Criar e verificar o Perfil da Empresa como “Brechó”, com endereço, horários e WhatsApp</li>
+<li>Fotos da fachada, da loja, das três irmãs e das peças</li>
+<li>Pedido de avaliação para as clientes fiéis, com mensagem pronta e link direto</li>
+<li>Post semanal da “Sexta da Nova Chance” também no Google</li></ul></div>
+<p class="gate">A verificação é feita pelo próprio Google e pode pedir um vídeo da fachada. Acompanhamos cada passo.</p>
+</div>
+<div class="card light"><div class="card-top"><span>Como vocês vão aparecer</span><span>02</span></div>
+<div class="gmock">
+<div class="gsearch"><span>🔍</span> brechó perto de mim</div>
+<div class="gmap" aria-hidden="true"><i style="left:22%;top:38%"></i><i style="left:64%;top:26%"></i><i style="left:78%;top:62%"></i><b style="left:44%;top:52%">📍</b></div>
+<div class="gcard"><div class="gt"><div class="gav"><svg class="ncmark" aria-hidden="true"><use href="#nc-mark"/></svg></div><div><b>Nova Chance Brechó</b><small>Brechó · R. Tremedal, 220A · Carlos Prates</small><small class="open">Aberto · consertos e customização</small></div></div>
+<div class="gbtn"><span>Rotas</span><span>Ligar</span><span>WhatsApp</span><span>Salvar</span></div>
+<p class="gnote">⭐ As primeiras avaliações vêm das clientes que já amam a loja.</p></div>
+</div>
+<p class="note-s">Simulação ilustrativa. O perfil final depende da verificação do Google.</p></div>
+</article>
+<!-- 3 -->
+<article class="phase" data-phase="3" hidden>
+<div>
+<div class="ph-head eyebrow"><span>Instagram · identidade e perfil</span><span>03 / 05</span></div>
+<h2 tabindex="-1">Um Instagram com <em>a cara de vocês.</em></h2>
+<p class="sub">O logo da agulha e as cores quentes já contam a história de reforma e recomeço. Vamos organizar o perfil para que quem chega entenda em segundos onde fica, o que vende e como comprar.</p>
 <div class="build"><span class="eyebrow">O que ganha vida nesta fase</span><ul>
+<li>Bio com bairro, horário e link direto para o WhatsApp</li>
+<li>Destaques: Novidades, Como comprar, Consigne, Consertos e A loja</li>
 <li>Paleta, fontes e modelos de post a partir do logo atual</li>
-<li>Bio, destaques e link direto para o WhatsApp</li>
-<li>Perfil no Google Maps, para aparecer em “brechó perto de mim”</li></ul></div>
+<li>Nome e @ bem claros, para não confundir com outros “Nova Chance”</li></ul></div>
 <p class="gate">Vocês aprovam as primeiras aplicações antes de seguirmos.</p>
 </div>
 <div class="card light"><div class="card-top"><span>Uma marca que se reconhece</span><div class="switch"><button type="button" data-view="id" aria-pressed="true">Identidade</button><button type="button" data-view="pf" aria-pressed="false">Perfil</button></div></div>
@@ -986,28 +1028,6 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <div class="hl"><div><span>N</span>Novidades</div><div><span>?</span>Como comprar</div><div><span>C</span>Consigne</div><div><span>🧵</span>Consertos</div><div><span>L</span>A loja</div></div></div>
 </div>
 <p class="note-s">Direção ilustrativa. A bio e os destaques finais serão definidos com vocês.</p></div>
-</article>
-
-<!-- 3 -->
-<article class="phase" data-phase="3" hidden>
-<div>
-<div class="ph-head eyebrow"><span>Atendimento com apoio de IA</span><span>03 / 05</span></div>
-<h2 tabindex="-1">Menos tempo respondendo. <em>Mais tempo vendendo.</em></h2>
-<p class="sub">As perguntas se repetem: preço, tamanho, endereço, horário. A IA cuida do básico e vocês entram na conversa quando ela vira venda.</p>
-<div class="build"><span class="eyebrow">O que organizamos nesta fase</span><ul>
-<li>WhatsApp Business com catálogo e respostas rápidas</li>
-<li>Respostas automáticas no direct para “quero”, “preço” e “endereço”</li>
-<li>Rol da consignação organizado, com aviso à consignante quando a peça vende</li></ul></div>
-<p class="gate">Começamos pelo mais simples e ampliamos conforme o ritmo de vocês.</p>
-</div>
-<div class="card light"><div class="card-top"><span>Uma conversa no direct</span><span>03</span></div>
-<div class="chat">
-<div class="msg in">Oi! Esse vestido azul ainda tem? Qual o valor?</div>
-<div class="msg out">Oi! Tem sim 💛 Está R$ 60, tamanho M. Quer que a gente separe para você até amanhã?<small>Resposta automática</small></div>
-<div class="msg in">Quero! Onde fica a loja?</div>
-<div class="msg out">Rua Tremedal, 220A, Carlos Prates. Vou te passar para a Cristina confirmar a reserva. 😊<small>Resposta automática → Cristina</small></div>
-</div>
-<p class="note-s">Exemplo ilustrativo. Os textos seguem a voz definida na fase 01.</p></div>
 </article>
 
 <!-- 4 -->
@@ -1037,18 +1057,18 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <!-- 5 -->
 <article class="phase" data-phase="5" hidden>
 <div>
-<div class="ph-head eyebrow"><span>Experiência da cliente</span><span>05 / 05</span></div>
+<div class="ph-head eyebrow"><span>O caminho da cliente</span><span>05 / 05</span></div>
 <h2 tabindex="-1">Do post até a loja. <em>E de volta na sexta.</em></h2>
 <p class="sub">Cada etapa foi pensada para que a cliente encontre, reserve, visite e volte. E para que vocês aprendam a conduzir isso com IA, com autonomia.</p>
 <div class="build"><span class="eyebrow">O que acompanhamos juntas</span><ul>
 <li>O caminho da cliente, do Instagram até a porta da loja</li>
 <li>Avaliações no Google a partir das clientes fiéis</li>
-<li>Uma pergunta simples no caixa: “como conheceu a gente?”</li></ul></div>
+<li>WhatsApp Business com respostas rápidas para preço, tamanho e endereço</li><li>Uma pergunta simples no caixa: “como conheceu a gente?”</li></ul></div>
 <p class="gate">Em uma etapa posterior, vocês podem assumir a rotina com a nossa mentoria.</p>
 </div>
 <div class="card light"><div class="card-top"><span>O caminho da cliente</span><span>05</span></div>
 <div class="path">
-<div class="pstep"><i>1</i><div><b>Vê a peça</b><span>No post da sexta ou nos stories.</span></div></div>
+<div class="pstep"><i>1</i><div><b>Encontra o brechó</b><span>No Google Maps ou no post da sexta.</span></div></div>
 <div class="pstep"><i>2</i><div><b>Chama no WhatsApp</b><span>Recebe preço e tamanho na hora.</span></div></div>
 <div class="pstep"><i>3</i><div><b>Reserva</b><span>A peça fica separada com o nome dela.</span></div></div>
 <div class="pstep"><i>4</i><div><b>Visita a loja</b><span>E sente o aconchego que ninguém esquece.</span></div></div>
@@ -1064,10 +1084,10 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <div>
 <div class="eyebrow" style="color:var(--caramel)">A próxima decisão é simples · Primeira etapa</div>
 <h2 tabindex="-1">Uma casa arrumada <em>para ser encontrada.</em></h2>
-<p>A primeira etapa une o posicionamento, a identidade organizada, o perfil do Instagram e do Google e o atendimento básico no WhatsApp. É a base para decidir, com segurança, o que vem depois.</p>
+<p>A primeira etapa coloca o Nova Chance no Google Maps e arruma o Instagram: perfil verificado no Google, bio, destaques, identidade e link direto para o WhatsApp. É a base para decidir, com segurança, o que vem depois.</p>
 <div class="acts"><a class="cta" id="wa" href="#" target="_blank" rel="noopener noreferrer">Conversar com a ElevarIA <span aria-hidden="true">↗</span></a><button type="button" class="ghost" data-go="1">Revisar a jornada</button></div>
 </div>
-<div class="confirm"><span class="eyebrow">A confirmar na conversa</span><h3>Escopo final, prazo e investimento.</h3><p style="font-size:15px;margin:0">Esses pontos serão definidos juntas antes de qualquer próxima etapa.</p><div class="scope">PRIMEIRA ETAPA · ESSÊNCIA + PRESENÇA + ATENDIMENTO</div></div>
+<div class="confirm"><span class="eyebrow">A confirmar na conversa</span><h3>Escopo final, prazo e investimento.</h3><p style="font-size:15px;margin:0">Esses pontos serão definidos juntas antes de qualquer próxima etapa.</p><div class="scope">PRIMEIRA ETAPA · GOOGLE MEU NEGÓCIO + INSTAGRAM</div></div>
 </section>
 </main>
 
@@ -1079,7 +1099,7 @@ const WA='5531991876584';
 const views={intro:document.getElementById('intro'),journey:document.getElementById('journey'),ending:document.getElementById('ending')};
 const phases=[...document.querySelectorAll('[data-phase]')],tabs=[...document.querySelectorAll('.tab')];
 const prevLabel=document.getElementById('prevLabel'),nextLabel=document.getElementById('nextLabel'),foot=document.getElementById('footPhase');
-const names=['Essência','Presença','Atendimento','Conteúdo','Experiência'];
+const names=['Diagnóstico','Google','Instagram','Conteúdo','Caminho'];
 let cur=0;
 function go(target,push=true){
  let n=target==='intro'?0:target==='end'?6:Number(target);if(Number.isNaN(n))n=0;cur=n;

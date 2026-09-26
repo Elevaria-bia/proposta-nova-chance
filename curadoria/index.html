@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap">
 <style>
-:root{--bg:#F1EADF;--ink:#2A1208;--wine:#601603;--mel:#FDB246;--car:#A77632;--card:#FFFDF8;--muted:#6E5A4E;color-scheme:light}
+:root{--bg:#F5F5EF;--ink:#002F32;--wine:#005C59;--mel:#C99A48;--car:#B08236;--card:#FFFEFA;--muted:#49615F;color-scheme:light}
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 Manrope,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding-inline:16px;box-sizing:border-box}
 header{width:100%;max-width:560px;display:flex;justify-content:space-between;align-items:center;padding-block:16px 12px}
@@ -13,15 +13,15 @@ header{width:100%;max-width:560px;display:flex;justify-content:space-between;ali
 header b{font:500 22px/1.2 'Playfair Display',Georgia,serif;color:var(--wine)}
 header span{font:700 13px Manrope;letter-spacing:.12em;text-transform:uppercase;color:var(--car);font-variant-numeric:tabular-nums}
 .stage{position:relative;width:100%;max-width:560px}
-.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:14px;box-shadow:0 18px 50px rgba(42,18,8,.18);background:var(--card)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:14px;box-shadow:0 18px 50px rgba(0,47,50,.18);background:var(--card)}
 .track::-webkit-scrollbar{display:none}
 .track img{flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:center;display:block;user-select:none;-webkit-user-drag:none}
-.nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,253,248,.92);color:#601603;font:700 26px/1 Manrope;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.18);display:grid;place-items:center}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,253,248,.92);color:#005C59;font:700 26px/1 Manrope;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.18);display:grid;place-items:center}
 .nav:disabled{opacity:0;pointer-events:none}
 .prev{left:-12px}.next{right:-12px}
 .nav:focus-visible,.dot:focus-visible,.cta a:focus-visible{outline:3px solid var(--car);outline-offset:3px}
 .dots{display:flex;gap:8px;justify-content:center;padding-block:16px}
-.dot{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#D4C4B0;cursor:pointer}
+.dot{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#C9D6D2;cursor:pointer}
 .dot[aria-current="true"]{background:var(--wine);width:26px;border-radius:6px}
 .hint{font-size:15px;color:var(--muted);text-align:center;margin:0}
 .cta{width:100%;max-width:560px;display:grid;gap:10px;padding-block:14px 28px}
@@ -40,7 +40,7 @@ footer{width:100%;max-width:560px;text-align:center;font-size:14px;color:var(--m
 </div>
 <div class="dots" id="dots" role="group" aria-label="Escolher imagem"></div>
 <p class="hint" id="hint">Arraste para o lado ou toque nas setas.</p>
-<div class="cta" id="cta" hidden><a href="https://wa.me/5531991876584?text=Oi%2C%20Fabiana!%20Vi%20a%20curadoria%20do%20Nova%20Chance%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Quero conversar com a Fabiana</a></div>
+<div class="cta" id="cta" hidden></div>
 <footer>Curadoria feita pela ElevarIA para o Nova Chance Brechó</footer>
 <script>
 (()=>{const t=document.getElementById('track'),n=t.children.length,dots=document.getElementById('dots'),cont=document.getElementById('cont'),prev=document.getElementById('prev'),next=document.getElementById('next'),cta=document.getElementById('cta');

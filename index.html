@@ -173,6 +173,17 @@ footer{border-top:1px solid var(--line)}
 .ending p{color:var(--muted);font-size:17px;max-width:540px}
 .confirm{background:var(--white);border:1px solid var(--line);padding:30px;border-radius:4px}
 .confirm .eyebrow{color:var(--caramel)}
+.plano{display:grid;gap:8px;margin:22px 0 26px;max-width:560px}
+.sem{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:12px 14px;background:var(--white);border:1px solid var(--line);border-radius:3px;font-size:14px;line-height:1.45}
+.sem b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--caramel);padding-top:2px}
+.sem.star{background:var(--wine);color:#fff;border-color:var(--wine)}.sem.star b{color:var(--mustard)}
+.inv{padding:18px 0;border-bottom:1px solid var(--line)}
+.inv small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.inv strong{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:44px;color:var(--wine);line-height:1.1;margin:6px 0 8px}
+.inv strong em{font-size:18px;color:var(--muted);font-style:normal;margin-left:4px}
+.inv p{font-size:14px!important;margin:0;color:var(--muted)}.confirm .inv+.scope{border-top:0;margin-top:6px}
+@media(max-width:560px){.sem{grid-template-columns:1fr;gap:4px}}
+
 .confirm h3{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;margin:10px 0 8px}
 .confirm .scope{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--wine)}
 .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
@@ -1109,12 +1120,21 @@ c-6 -117 -60 -319 -120 -448 -20 -43 -44 -106 -53 -140 -8 -35 -28 -90 -44
 <!-- ENDING -->
 <section class="view ending" id="ending" hidden>
 <div>
-<div class="eyebrow" style="color:var(--caramel)">Primeira etapa</div>
-<h2 tabindex="-1">Por onde <em>começar.</em></h2>
-<p>Na primeira etapa a gente coloca o Nova Chance no Google Maps, arruma o Instagram, cria um site simples e liga tudo ao WhatsApp. Depois disso vocês decidem, com calma, se querem seguir com o conteúdo do dia a dia.</p>
-<div class="acts"><a class="cta" id="wa" href="#" target="_blank" rel="noopener noreferrer">Conversar com a ElevarIA</a><button type="button" class="ghost" data-go="1">Rever a proposta</button></div>
+<div class="eyebrow" style="color:var(--caramel)">Como começamos</div>
+<h2 tabindex="-1">O primeiro <em>mês.</em></h2>
+<p>Em quatro semanas o Nova Chance aparece no Google, o Instagram fica arrumado, o site vai ao ar e o conteúdo começa a sair.</p>
+<div class="plano">
+<div class="sem"><b>Semana 1</b><span>Assinatura do contrato, acessos ao Google e ao Instagram sem senha, e o encontro de fotos e vídeos com vocês.</span></div>
+<div class="sem"><b>Semana 2</b><span>Google Meu Negócio completo, bio e destaques do Instagram, identidade organizada em modelos prontos.</span></div>
+<div class="sem"><b>Semana 3</b><span>Site no ar, ligado ao Google, ao Instagram e ao WhatsApp. Primeiros posts para a Cristina aprovar.</span></div>
+<div class="sem star"><b>Semana 4</b><span>Primeira Sexta da Nova Chance publicada e o calendário do mês seguinte pronto.</span></div>
 </div>
-<div class="confirm"><span class="eyebrow">Para conversarmos</span><h3>Valores e prazo.</h3><p style="font-size:15px;margin:0">A gente combina juntas, na conversa, antes de começar qualquer coisa.</p><div class="scope">PRIMEIRA ETAPA: GOOGLE, INSTAGRAM E SITE</div></div>
+<div class="acts"><a class="cta" id="wa" href="#" target="_blank" rel="noopener noreferrer">Quero começar</a><button type="button" class="ghost" data-go="1">Rever a proposta</button></div>
+</div>
+<div class="confirm"><span class="eyebrow">Investimento</span>
+<div class="inv"><small>Setup</small><strong>R$ 1.200</strong><p>Site, Google Meu Negócio, Instagram, identidade visual, Estúdio de conteúdo e vídeo, e a consultoria de fotos e vídeos. Metade na assinatura, metade na entrega.</p></div>
+<div class="inv"><small>Mensal</small><strong>R$ 620<em>/mês</em></strong><p>8 posts no feed, 4 reels, stories 3 dias por semana, 4 posts no Google, respostas às avaliações e um relatório por mês.</p></div>
+<div class="scope">CONTRATO DE 6 MESES · TOTAL R$ 4.920</div></div>
 </section>
 </main>
 
@@ -1133,9 +1153,9 @@ function go(target,push=true){
  views.intro.hidden=n!==0;views.journey.hidden=!(n>=1&&n<=5);views.ending.hidden=n!==6;
  if(n>=1&&n<=5){phases.forEach(p=>p.hidden=Number(p.dataset.phase)!==n);
   tabs.forEach((t,i)=>{t.setAttribute('aria-selected',String(i+1===n));t.tabIndex=i+1===n?0:-1});
-  prevLabel.textContent=n===1?'Abertura':names[n-2];nextLabel.textContent=n===5?'Primeira etapa':'Próxima parte';
+  prevLabel.textContent=n===1?'Abertura':names[n-2];nextLabel.textContent=n===5?'Investimento':'Próxima parte';
   foot.textContent=`FASE 0${n} / 05`;const tl=document.querySelector('[role=tablist]'),sel=tabs[n-1];tl.scrollLeft=Math.max(0,sel.offsetLeft-tl.offsetLeft-(tl.clientWidth-sel.offsetWidth)/2);}
- else foot.textContent=n===0?'ABERTURA':'PRIMEIRA ETAPA';
+ else foot.textContent=n===0?'ABERTURA':'INVESTIMENTO';
  const hash=n===0?'#inicio':n===6?'#primeira-etapa':`#fase-${n}`;if(push&&location.hash!==hash)history.pushState(null,'',hash);
  window.scrollTo({top:0});const h=document.querySelector(n===0?'#intro h1':n===6?'#ending h2':`[data-phase="${n}"] h2`);if(h&&push)h.focus({preventScroll:true});
 }
@@ -1145,7 +1165,7 @@ document.getElementById('prev').addEventListener('click',()=>go(cur<=1?'intro':c
 document.getElementById('next').addEventListener('click',()=>go(cur>=5?'end':cur+1));
 document.querySelector('[role=tablist]').addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<5){go(cur+1);tabs[cur-1].focus()}if(e.key==='ArrowLeft'&&cur>1){go(cur-1);tabs[cur-1].focus()}});
 document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('[data-pane]').forEach(p=>p.hidden=p.dataset.pane!==b.dataset.view)}));
-document.getElementById('wa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Oi! Vi a proposta da ElevarIA para o Nova Chance Brechó e quero conversar sobre a primeira etapa.')}`;
+document.getElementById('wa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Oi! Vi a proposta da ElevarIA para o Nova Chance Brechó e quero começar.')}`;
 window.addEventListener('popstate',fromHash);fromHash();
 })();
 </script>
